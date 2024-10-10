@@ -18,8 +18,5 @@ RUN apt-get update && \
 COPY . .
 
 RUN docker build -t image .
-RUN docker run -d --net=bridge \
-    -p 9000:9000 \
-    -v ./data:/app/data \
-    q11391/pandora-helper
+RUN docker run -d --net=bridge -p 9000:9000 -v ./data:/app/data q11391/pandora-helper
 EXPOSE WEBSITE http://localhost:9000
